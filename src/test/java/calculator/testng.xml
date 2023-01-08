@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!--@BeforeSuite-->
+<suite name="Calculator">
+    <!--    @BeforeTest-->
+    <test name="Login Test">
+        <classes>
+            <!--            @BeforeClass-->
+            <class name="calculator.testcases.LoginTest"></class>
+            <!--            @AfterClass-->
+        </classes>
+    </test>
+    <!--    @AfterTest-->
+    <test name="Calculator Test">
+        <classes>
+            <class name="calculator.testcases.CalculationTest"/>
+        </classes>
+    </test> <!-- Test -->
+</suite> <!-- Suite -->
+        <!--@AfterSuite-->
+

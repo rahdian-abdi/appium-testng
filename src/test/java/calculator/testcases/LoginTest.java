@@ -10,14 +10,11 @@ import org.testng.annotations.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class LoginTest {
-    AndroidDriver driver;
-    BasePage base;
+public class LoginTest extends BasePage{
     @BeforeTest
     public void setUp() throws Exception {
+        androidInitiate();
         AndroidInit.open();
-        driver = AndroidInit.driver;
-        base = AndroidInit.base;
     }
     @AfterTest
     public void tearDown(){
@@ -26,8 +23,8 @@ public class LoginTest {
 
     @Test
     public void login(){
-        base.inputText(By.id("com.isl.simpleapp:id/username"), "admin");
-        base.inputText(By.id("com.isl.simpleapp:id/password"), "admin");
-        base.click(By.id("com.isl.simpleapp:id/login"));
+        inputText(By.id("com.isl.simpleapp:id/username"), "admin");
+        inputText(By.id("com.isl.simpleapp:id/password"), "admin");
+        click(By.id("com.isl.simpleapp:id/login"));
     }
 }

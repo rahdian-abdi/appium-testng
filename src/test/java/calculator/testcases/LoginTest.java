@@ -14,11 +14,10 @@ public class LoginTest extends BasePage{
     @BeforeTest
     public void setUp() throws Exception {
         androidInitiate();
-        AndroidInit.open();
     }
     @AfterTest
     public void tearDown(){
-        AndroidInit.quit();
+        androidExit();
     }
 
     @Test

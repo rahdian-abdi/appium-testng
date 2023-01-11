@@ -13,11 +13,9 @@ import java.util.concurrent.TimeUnit;
 import static org.junit.Assert.assertEquals;
 
 public class CalculationTest extends BasePage{
-    public BasePage base;
     @BeforeTest
     public void setUp() throws Exception {
         androidInitiate();
-        AndroidInit.open();
         inputText(By.id("com.isl.simpleapp:id/username"), "admin");
         inputText(By.id("com.isl.simpleapp:id/password"), "admin");
         click(By.id("com.isl.simpleapp:id/login"));
@@ -25,7 +23,7 @@ public class CalculationTest extends BasePage{
     }
     @AfterTest
     public void tearDown(){
-        AndroidInit.quit();
+        androidExit();
     }
     @BeforeMethod
     public void inputNumber(){

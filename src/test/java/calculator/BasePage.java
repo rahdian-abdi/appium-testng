@@ -1,5 +1,6 @@
 package calculator;
 
+import calculator.init.AndroidInit;
 import io.appium.java_client.TouchAction;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -17,13 +18,11 @@ import java.time.temporal.ChronoUnit;
 import java.util.concurrent.TimeUnit;
 
 public class BasePage {
-    public static AndroidDriver driver;
+    public AndroidDriver driver;
 
+    public AndroidInit init;
 
-//    public BasePage(AndroidDriver driver){
-//        this.driver = driver;
-//    }
-    public static void androidInitiate() throws Exception {
+    public void androidInitiate() throws Exception {
         DesiredCapabilities cap = new DesiredCapabilities();
         cap.setCapability(MobileCapabilityType.PLATFORM_NAME, Platform.ANDROID);
         cap.setCapability(MobileCapabilityType.DEVICE_NAME, "device");
@@ -40,6 +39,11 @@ public class BasePage {
             String msg = e.getMessage();
             System.out.println(msg);
         }
+        init = new AndroidInit(driver);
+        init.open();
+    }
+    public void androidExit(){
+        init.quit();
     }
     public WebElement find(By by){
         return driver.findElement(by);

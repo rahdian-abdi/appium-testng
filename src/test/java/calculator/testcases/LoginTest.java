@@ -1,14 +1,10 @@
 package calculator.testcases;
 
 import calculator.BasePage;
-import calculator.init.AndroidInit;
-import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-
-import static org.junit.Assert.assertEquals;
 
 public class LoginTest extends BasePage{
     @BeforeTest

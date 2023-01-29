@@ -2,13 +2,8 @@ package calculator.testcases;
 
 import calculator.BasePage;
 import calculator.dataprovider.CustomDataProvider;
-import calculator.init.AndroidInit;
-import io.appium.java_client.TouchAction;
-import io.appium.java_client.android.AndroidDriver;
 import org.openqa.selenium.By;
 import org.testng.annotations.*;
-
-import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
 
